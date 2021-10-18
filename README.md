@@ -7,17 +7,20 @@ the folder sum up code of microfluid project
 Để giao tiếp với Arduino qua Serial, chúng ta cần cài thư viện pyserial cho Python3
 - pip install pyserial
 - pip3 install pyserial
+
 ### Kiểm tra cổng USB
 Không giống với Window, khi bạn gắn cổng USB vào thì Window sẽ báo. Ở Raspbian, các bạn vào Terminal gõ
 - ls /dev/tty*
+
 Sau đó gắn cổng USB vào và gõ lại 1 lần nữa
 - ls /dev/tty*
+
 Khi đó, các bạn sẽ thấy 1 file mới được tạo ra so với ban đầu, đó là đường dẫn đến cổng USB bạn mới gắn vào. Như trong phần mềm sẽ là /dev/ttyUSB0.
 Các cổng nối port với Raspberry pi ở project này hiển thị có dạng /dev/ttyUSB.. 
 
 ### File Code run: 
-home/pi/Downloads/microfluid/test_parallel/ => do_thong_so_3_1.py (chưa có phần camera)
-home/pi/Downloads/microfluid/test_parallel/pi_stream_android => final_code.py (đã có phần stream cam)
+../RUN_3pump_PARALLEL/RUN_PARALLEL => do_thong_so_3.py (chưa có phần camera PI)
+../RUN_3pump_PARALLEL/RUN_PARALLEL_ANDROID/ => final_code.py (đã có phần stream cam)
 
 ## CÁCH HOẠT ĐỘNG:
 ### Kiểm tra kết nối các cổng port trên Pi : 
@@ -37,12 +40,13 @@ home/pi/Downloads/microfluid/test_parallel/pi_stream_android => final_code.py (�
 5, RUN code python và màn hình hiển thị
 
 6, Sau khi màn hình hiển thị giao diện, bật Monitor ở các file Arduino nối với động cơ lên. 
-- Arduino 1: home/pi/Downloads/microfluid/test_parallel/Arduino1
-- Arduino 2: home/pi/Downloads/microfluid/test_parallel/Arduino2
-- Arduino 3: home/pi/Downloads/microfluid/test_parallel/Arduino3
+- Arduino 1: ../RUN_3pump_PARALLEL/Arduino1
+- Arduino 2: ../RUN_3pump_PARALLEL/Arduino2
+- Arduino 3: ../RUN_3pump_PARALLEL/Arduino3
 
 7, mở monitor cho từng file Arduino. monitor cho arduino 1 là /dev/ttyUSB0
-file arduino 2, chỉnh sửa cổng port nhận sang /dev/ttyUSB1. Tools -> Port : chọn /dev/ttyUSB1 => chạy monitor
+file arduino 2, chỉnh sửa cổng port nhận sang /dev/ttyUSB1. 
+Tools -> Port : chọn /dev/ttyUSB1 => chạy monitor
 tương tự với Arduino 3 => /dev/ttyUSB2 
 Lưu ý: lựa chọn Board Arduino cho phù hợp với hệ : ví dụ Mạch Board Arduino Uno R3
 
